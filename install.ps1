@@ -68,8 +68,8 @@ Try {
 $InstallDir = "C:\webpagetest"
 $ScriptDir = "C:\Users\IEUser"
 $TempDir = "C:\wpttemp"
-$URL = "https://github.com/WPO-Foundation/webpagetest/releases/download/WebPageTest-2.19/webpagetest_2.19.zip"
-$ZipFile = "$TempDir\webpagetest_2.19.zip"
+$URL = "https://github.com/WPO-Foundation/webpagetest/releases/download/WebPageTest-3.0/webpagetest_3.0.zip"
+$ZipFile = "$TempDir\webpagetest_3.0.zip"
 
 If (Test-Path $InstallDir -pathType container) {
   Write-Output "Dir WebPageTest already created."
@@ -129,6 +129,6 @@ If (Test-Path $InstallDir\agent\dummynet\netipfw.inf) {
   Write-Output "Dummynet already installed."
 } Else {
   Copy-Item $InstallDir\agent\dummynet\32bit\* $InstallDir\agent\dummynet\
-  $ScriptDir\mindinst.exe $InstallDir\agent\dummynet\netipfw.inf -i -s
+  "$ScriptDir\mindinst.exe $InstallDir\agent\dummynet\netipfw.inf -i -s"
   Write-Output "Dummynet installed."
 }
